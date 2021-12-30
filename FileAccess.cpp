@@ -13,7 +13,7 @@ int FileAccess::Apply(int size) {
 			it = remaining_space.erase(it);
 			index.emplace_back(0, x, size);
 			if (x + size <= y) {
-				remaining_space.emplace(x, s + size);
+				remaining_space.insert(std::make_pair(x, x + size));
 			}
 			return x;
 		}
